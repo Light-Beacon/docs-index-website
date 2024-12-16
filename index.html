@@ -69,7 +69,11 @@
 
             a.muted-link {
                 color: #eee;
-                text-decoration: dashed;
+                text-decoration: underline;
+            }
+
+            h1{
+                color: white
             }
         }
     </style>
@@ -80,6 +84,7 @@
         document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     <div class="center">
+        <h1>选择你要浏览的文档</h1>
         <div class="container">
             <a href="https://builder.docs.bugjump.net">
                 <div class="box">
