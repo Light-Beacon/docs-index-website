@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>文档选择</title>
+    <style>
+        body {
+            --color-code-background: #f8f8f8;
+            --color-code-foreground: black;
+            background-color: #1C2A48;
+        }
+
+        @media not print {
+
+            body {
+                --box-background: #3A506B;
+                --box-foreground: white;
+                --box-background-hover: #769AA8;
+                font-family: 'Noto Sans SC', sans-serif;
+                overflow: hidden;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                min-width: 80%;
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            .box {
+                background-color: var(--box-background);
+                color: var(--box-foreground);
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: -1px 5px 24px rgba(0, 0, 0, 0.21);
+                transition: box-shadow .2s, background-color .2s;
+                margin: 2em;
+                padding: 2em;
+            }
+
+            .box:hover {
+                box-shadow: -1px 5px 24px rgba(0, 0, 0, 0.41);
+                background-color: var(--box-background-hover);
+            }
+
+            h2 {
+                margin: .1em;
+            }
+
+            .note {
+                margin: .1em;
+                font-size: 1em;
+                color: #eee;
+                opacity: .6;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            a.muted-link {
+                color: #eee;
+                text-decoration: dashed;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    <div class="center">
+        <div class="container">
+            <a href="https://builder.docs.bugjump.net">
+                <div class="box">
+                    <h2>HomepageBuilder</h2>
+                    <div class="note">
+                        构建器文档
+                    </div>
+                </div>
+            </a>
+            <a href="https://news.docs.bugjump.net">
+                <div class="box">
+                    <h2>PCL2 NewsHomepage API</h2>
+                    <div class="note">
+                        新闻主页 API 文档
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="note">
+            Copyright © <a class="muted-link" href="https://github.com/Light-Beacon">Light-Beacon(Nattiden)</a>
+        </div>
+    </div>
+</body>
+
+</html>
