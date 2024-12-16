@@ -6,75 +6,72 @@
     <title>文档选择</title>
     <style>
         body {
-            --color-code-background: #f8f8f8;
-            --color-code-foreground: black;
-            background-color: #1C2A48;
+            --background-color: #1C2A48;
+            --box-background: #3A506B;
+            --box-foreground: white;
+            --box-background-hover: #769AA8;
+            font-family: 'Noto Sans SC', sans-serif;
+            overflow: hidden;
+            background-color: var(--background-color);
         }
 
-        @media not print {
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            min-width: 80%;
+        }
 
-            body {
-                --box-background: #3A506B;
-                --box-foreground: white;
-                --box-background-hover: #769AA8;
-                font-family: 'Noto Sans SC', sans-serif;
-                overflow: hidden;
-            }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-            .container {
-                display: flex;
-                flex-direction: column;
-                width: fit-content;
-                min-width: 80%;
-            }
+        .box {
+            background-color: var(--box-background);
+            color: var(--box-foreground);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.50);
+            transition: box-shadow 1s ease, background-color .32s ease;
+            margin: 1em;
+        }
 
-            .center {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                height: 100vh;
-            }
+        .box:hover {
+            box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.8);
+            background-color: var(--box-background-hover);
+        }
 
-            .box {
-                background-color: var(--box-background);
-                color: var(--box-foreground);
-                padding: 10px;
-                border-radius: 5px;
-                box-shadow: -1px 5px 24px rgba(0, 0, 0, 0.21);
-                transition: box-shadow .2s, background-color .2s;
-                margin: 2em;
-                padding: 2em;
-            }
+        h2 {
+            margin: .1em;
+        }
 
-            .box:hover {
-                box-shadow: -1px 5px 24px rgba(0, 0, 0, 0.41);
-                background-color: var(--box-background-hover);
-            }
+        .note {
+            margin: .1em;
+            font-size: 1em;
+            color: #eee;
+            opacity: .7;
+        }
 
-            h2 {
-                margin: .1em;
-            }
+        a {
+            text-decoration: none;
+            color: unset;
+        }
 
-            .note {
-                margin: .1em;
-                font-size: 1em;
-                color: #eee;
-                opacity: .6;
-            }
+        a.muted-link {
+            color: #eee;
+            text-decoration: underline;
+        }
 
-            a{
-                text-decoration: none;
-            }
+        .inner-box {
+            padding: 2em;
+        }
 
-            a.muted-link {
-                color: #eee;
-                text-decoration: underline;
-            }
-
-            h1{
-                color: white
-            }
+        h1 {
+            color: white
         }
     </style>
 </head>
@@ -86,26 +83,30 @@
     <div class="center">
         <h1>选择你要浏览的文档</h1>
         <div class="container">
-            <a href="https://builder.docs.bugjump.net">
-                <div class="box">
-                    <h2>HomepageBuilder</h2>
-                    <div class="note">
-                        构建器文档
+            <div class="box">
+                <a class="site-link" href="https://builder.docs.bugjump.net">
+                    <div class="inner-box">
+                        <h2>HomepageBuilder</h2>
+                        <div class="note">
+                            通过强大的工具构建你的主页｜构建器文档
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="https://news.docs.bugjump.net">
-                <div class="box">
-                    <h2>PCL2 NewsHomepage API</h2>
-                    <div class="note">
-                        新闻主页 API 文档
+                </a>
+            </div>
+            <div class="box">
+                <a class="site-link" href="https://news.docs.bugjump.net">
+                    <div class="inner-box">
+                        <h2>PCL2 NewsHomepage API</h2>
+                        <div class="note">
+                            更深层地调用新闻主页的内容｜新闻主页接口文档
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-        <div class="note">
-            Copyright © <a class="muted-link" href="https://github.com/Light-Beacon">Light-Beacon(Nattiden)</a>
-        </div>
+            <div class="note">
+                Copyright © <a class="muted-link" href="https://github.com/Light-Beacon">Light-Beacon(Nattiden)</a> | No cookies are used.
+            </div>
     </div>
 </body>
 
